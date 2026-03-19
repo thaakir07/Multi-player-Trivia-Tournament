@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  player_id     Int             @id @default(autoincrement())
+  username      String          @unique
+  email         String          @unique
+  avatar_url    String
+  password      String
+  role          String          @default("user")
+  gamesPlayed   Int             @default(0)
+  highScore     Int             @default(0)
+  joinDate      DateTime        @default(now())
+  playerRanking Int             @default(0)
+  matches       MatchResults[]  @relation("UserMatches")
+  answers       MatchAnswers[]
+  scores        FinalScores[]
+  matchPlayers  MatchPlayer[]
+}
+
+model Trivia {
+  id             Int              @id @default(autoincrement())
+  categories     MultiCat[]       @relation("TriviaCategories")
+  question       String
+  answer         String
+  difficulty     String
+  matchQuestions MatchQuestions[]
+  options        Option[]
+}
+
+model Option {
+  id       Int    @id @default(autoincrement())
+  text     String
+  triviaId Int
+  trivia   Trivia @relation(fields: [triviaId], references: [id])
+}
+
+model MultiCat {
+  id       Int    @id @default(autoincrement())
+  text     String @unique
+  trivia   Trivia[]  @relation("TriviaCategories")
+}
+
+model Match {
+  id           Int             @id @default(autoincrement())
+  hostId       String
+  difficulty   String
+  numQuestions Int
+  status       MatchStatus     @default(WAITING)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  currQuestionIndex Int     @default(0)
+  players      MatchPlayer[]
+  result       MatchResults?
+  categories   MatchCategory[]
+}
+
+model MatchPlayer {
+  id           Int          @id @default(autoincrement())
+  matchId      Int
+  userId       Int
+  score        Int          @default(0)
+  playerStatus PlayerStatus @default(WAITING)
+  joinedAt     DateTime     @default(now())
+  match        Match        @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [player_id], onDelete: Cascade)
+
+  @@unique([matchId, userId])
+  @@index([matchId])
+  @@index([userId])
+}
+
+model Category {
+  id      Int             @id @default(autoincrement())
+  name    String          @unique
+  matches MatchCategory[]
+}
+
+model MatchCategory {
+  matchId    Int
+  categoryId Int
+  match      Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([matchId, categoryId])
+  @@index([matchId])
+  @@index([categoryId])
+}
+
+model MatchResults {
+  id             Int              @id @default(autoincrement())
+  matchId        Int              @unique
+  timeOfMatch    DateTime         @default(now())
+  match          Match            @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  finalScores    FinalScores[]
+  matchAnswers   MatchAnswers[]
+  matchQuestions MatchQuestions[]
+  users          User[]           @relation("UserMatches")
+}
+
+model MatchQuestions {
+  id       Int            @id @default(autoincrement())
+  question String
+  triviaId Int
+  matchId  Int
+  answers  MatchAnswers[]
+  match    MatchResults   @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  trivia   Trivia         @relation(fields: [triviaId], references: [id])
+}
+
+model MatchAnswers {
+  id         Int            @id @default(autoincrement())
+  answer     String
+  userId     Int
+  questionId Int
+  matchId    Int
+  timeTaken  Int
+  createdAt  DateTime       @default(now())
+  match      MatchResults   @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  question   MatchQuestions @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  user       User           @relation(fields: [userId], references: [player_id], onDelete: Cascade)
+}
+
+model FinalScores {
+  id        Int          @id @default(autoincrement())
+  score     Int
+  userId    Int
+  matchId   Int
+  createdAt DateTime     @default(now())
+  match     MatchResults @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  user      User         @relation(fields: [userId], references: [player_id], onDelete: Cascade)
+
+  @@unique([userId, matchId])
+  @@index([matchId])
+  @@index([userId])
+}
+
+enum MatchStatus {
+  WAITING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum PlayerStatus {
+  WAITING
+  READY
+  HOST
+}

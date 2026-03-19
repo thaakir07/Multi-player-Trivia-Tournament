@@ -1,0 +1,160 @@
+.details-Box {
+    /* Flex setup */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+
+    margin-top: 25vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 25vw;
+
+    /* Styling */
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+
+    /* Border glow */
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 0 0px 15px var(--color-secondary), 0 0px 15px var(--color-secondary);
+
+    /* Padding + Margin */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.details-Box h1 {
+    font-family: "Press Start 2P", sans-serif;
+    color: var(--color-secondary);
+    justify-self: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.user-box, .email-box, .password-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    height: 2rem;
+}
+
+.login-box label, .signUp-box label {
+    color: var(--color-secondary);
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold
+}
+
+.login-box input, .signUp-box input {
+    /* Styling */
+    background-color: rgb(255, 186, 186);
+    border-radius: 5px;
+    width: 15rem;
+    height: 2rem;
+
+    /* Text */
+    font-size: 1.3rem;
+    color: black;
+}
+
+.remember-me-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 1.5rem;
+}
+
+.remember-me-box label {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.remember-me-box input[type="checkbox"] {
+    /* Styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+
+    /* Background */
+    background-color: rgb(255, 186, 186);
+
+    /* Size */
+    width: 1.5rem;
+    height: 1.5rem;
+
+    /* Border */
+    border-radius: 5px;
+}
+
+.remember-me-box input[type="checkbox"]:hover {
+    /* Glowing Button effect */
+    box-shadow: 0 0 10px var(--color-secondary), 0 0 10px var(--color-secondary), 0 0 40px var(--color-secondary);
+}
+
+.remember-me-box input[type="checkbox"]:checked {
+    /* Background */
+    background-color: var(--color-secondary);
+}
+
+.remember-me-box input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: var(--color-text);
+    font-size: 1.1rem;
+    position: relative;
+    left: 0.3rem;
+}
+
+.details-Box .submit-button {
+    /* Positioning */
+    margin-top: 2vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    /* Styling */
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    border-radius: 5px;
+    width: 15rem;
+    height: 2.5rem;
+
+    /* Text */
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-text);
+}
+
+.details-Box .submit-button:hover {
+    background-color: var(--color-text);
+    color: var(--color-secondary);
+
+    /* Glowing Button effect */
+    box-shadow: 0 0 10px var(--color-secondary), 0 0 10px var(--color-secondary), 0 0 40px var(--color-secondary);
+}
+
+.details-Box .submit-button:active {
+    transform: translate(-50%, 0%) scale(0.8);
+}
+
+.details-Box a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.details-Box a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

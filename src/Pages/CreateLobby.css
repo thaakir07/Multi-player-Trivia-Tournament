@@ -1,0 +1,43 @@
+.create-lobby-content {
+  position: relative;
+  top: 6rem;
+
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  /* Size */
+  height: 80vh;
+}
+
+.create-lobby-page .navBar {
+  border: 1px solid var(--color-create-lobby);
+  box-shadow: 0 0px 20px var(--color-create-lobby), 0 0px 20px var(--color-create-lobby);
+}
+
+.create-lobby-page .navBar button:hover {
+  color: var(--color-create-lobby);
+}
+
+.matches-info-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+
+  /* Background */
+  background-image: url("../assets/sfbg.jpg");
+  background-position: center;
+  background-size: cover;
+  border: 1px solid var(--color-create-lobby);
+  border-radius: 10px;
+  box-shadow: 0 0px 20px var(--color-create-lobby), 0 0px 20px var(--color-create-lobby);
+
+  /* Size */
+  width: 70%;
+  height: 100%;
+
+  /* Padding + Margin */
+  margin-left: 3vw;
+  box-sizing: border-box;
+}

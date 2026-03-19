@@ -1,0 +1,248 @@
+.profile-card {
+    /* Flexing */
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+
+    /* Styling */
+    padding: 1.5rem;
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px var(--color-secondary), 0px 0px 15px var(--color-secondary);
+    background-color: var(--color-primary);
+
+    /* Size */
+    width: 18vw;
+    height: 100%;
+}
+
+.profile-card .profile-title {
+    /* Text */
+    font-size: 1.4rem;
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-family: "Press Start 2P", sans-serif;
+
+    /* Positioning */
+    padding-bottom: 1rem;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+}
+
+.profile-card input {
+    /* Size */
+    width: 100%;
+    margin-top: 25px;
+
+    /* Styling */
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    padding: 5px 5px;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.profile-pic-wrapper {
+    /* Size */
+    width: 15rem;
+    height: 15rem;
+
+    /* Styling */
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    cursor: pointer;
+
+    /* Positioning */
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    align-self: center;
+}
+
+.profile-pic-wrapper:hover {
+    background: linear-gradient(135deg, #7a2939, #202c68);
+}
+
+.profile-pic-wrapper:hover::after {
+    opacity: 1;
+}
+
+.profile-pic-wrapper::after {
+    /* Size */
+    width: 70%;
+    height: 70%;
+
+    /* Positioning */
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+
+    /* Background */
+    z-index: 2;
+    content: "";
+    background: url('../assets/edit-pfp-icon.svg') no-repeat center center;
+    background-size: contain;
+
+    /* Extra */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profile-card .profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.profile-card .profile-pic:hover {
+    cursor: pointer;
+    filter: brightness(40%)
+}
+
+.profile-card .username-box {
+    /* Flexing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.username-box .username-label {
+    /* Styling */
+    font-size: 2rem;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.username-box input {
+    margin-top: 50px;
+}
+
+.profile-card .player-stats-title {
+    /* Styling */
+    font-size: 25px;
+    color: var(--color-secondary);
+    font-weight: bold;
+
+    /* Positioning */
+    margin-bottom: 10px;
+}
+
+.profile-stats {
+    /* Flexing */
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-stats .stats-box {
+    /* Positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* Padding */
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.profile-stats .stats-label {
+    /* Styling */
+    font-size: 13px;
+    color: var(--color-accent);
+    font-family: "Press Start 2P", sans-serif;
+    font-weight: bold;
+}
+
+.profile-stats .stats-value {
+    /* Styling */
+    font-size: 13px;
+    color: var(--color-text);
+    font-family: "Press Start 2P", sans-serif;
+
+    /* Positioning */
+
+}
+
+.delete-button {
+    /* Styling */
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 18px;
+
+    /* Positioning */
+    align-self: center;
+    margin-top: 1.5vh;
+
+    /* Size */
+    width: 8vw;
+    height: 6vh;
+
+    /* Special effects */
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+    scale: 1.4;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--color-secondary);
+
+    /* Remove text */
+    color: transparent;
+    background-image: url("../assets/skull-icon-light.svg");
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttons-container {
+    /* Flexing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 18vh;
+
+    /* Positioning */
+    margin-top: 1.5vh;
+
+}
+
+.edit-button:hover {
+    scale: 1.1;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--color-secondary) , 0 0 15px var(--color-accent);
+}
+
+.buttons-container .edit-button {
+    background: var(--color-secondary);
+    background: -webkit-linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    border: none;
+    border-radius: 5px;
+
+    /* Text */
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 18px;
+    width: 8vw;
+    height: 6vh;
+
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}

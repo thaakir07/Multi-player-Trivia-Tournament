@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  /* Fonts */
+  --font-family-base: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Colors */
+  --color-primary: #3a3a3a;
+  --color-secondary: #FC466B;
+  --color-accent: #7b91fd;
+  --color-background: #242424;
+  --color-button-primary: #904e95;
+  --color-easy: #60fa60;
+  --color-medium: #ffff5f;
+  --color-hard: #fa4040;
+  --color-start: #ffc70e;
+  --color-create-lobby: #ff2ce3;
+  --color-button-bg: #555555;
+
+  /* Text */
+  --color-text: #ffffff;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-secondary);
+}

@@ -1,0 +1,161 @@
+.match-card {
+  /* Flexing */
+  display: flex;
+  flex-direction: column;
+
+  /* Size */
+  width: 30vw;
+  height: 20vh;
+
+  /* Background */
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-create-lobby);
+  border-radius: 10px;
+  box-shadow: 0 0px 20px var(--color-create-lobby), 0 0px 20px var(--color-create-lobby);
+
+  /* Positioning */
+  margin: 2rem;
+  padding-bottom: 1rem;
+}
+
+.match-card .match-id-container,
+.match-card .players-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+
+  /* Size */
+  width: 50%;
+
+  /* Positioning */
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+
+  background-color: var(--color-button-bg);
+  border-radius: 5px;
+}
+
+.match-id-container .id-label,
+.players-container .players-label {
+  /* Text */
+  color: var(--color-create-lobby);
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1rem;
+
+  /* Positioning */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.match-id-container .actual-id {
+  /* Text */
+  color: var(--color-text);
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1rem;
+
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.match-card .players-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+
+  background-color: var(--color-button-bg);
+  border-radius: 5px;
+
+  width: 95%;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.players-container .actual-players {
+  /* Text */
+  color: var(--color-text);
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.8rem;
+
+  width: 100%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+
+
+.match-card .buttons-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.match-card .join-button,
+.match-card .reject-button {
+  /* Size */
+  width: 10rem;
+  height: 2rem;
+
+  /* Text */
+  color: var(--color-text);
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 0.8rem;
+
+  border-radius: 5px;
+  padding: 0.5rem;
+
+  text-align: center;
+  height: 6vh;
+}
+
+.match-card .join-button {
+  /* Background */
+  background-color: var(--color-easy);
+  border: 2px solid var(--color-background);
+}
+
+.match-card .reject-button {
+  /* Background */
+  background-color: var(--color-hard);
+  border: 2px solid var(--color-background);
+}
+
+.match-card .join-button:hover,
+.match-card .reject-button:hover {
+  cursor: pointer;
+  scale: 1.1;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.match-card .join-button:hover {
+  /* Background */
+  box-shadow: 0 0px 20px var(--color-easy), 0 0px 20px var(--color-easy);
+}
+
+.match-card .reject-button:hover {
+  /* Background */
+  box-shadow: 0 0px 20px var(--color-hard), 0 0px 20px var(--color-hard);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

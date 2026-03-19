@@ -1,0 +1,110 @@
+
+.navBar {
+    /* Positioning */
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    width: 55%;
+    transform: translateX(-50%); /* Pull back to get the centered top mid for any screen size */
+
+    /* Styling */
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    /* Border */
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 0 0px 15px var(--color-secondary), 0 0px 15px var(--color-secondary);
+}
+
+.navBar .title {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 0;
+
+    /* Styling */
+    background: #FC466B;
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+    background: linear-gradient(to right, #3F5EFB, #FC466B);
+
+    /* Text */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Add text shadow for blurry effect */
+    text-shadow: 3px 3px 1px rgba(255, 255, 255, 0.1);
+}
+
+.navBar button {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.navBar button:hover {
+    color: var(--color-secondary);
+    scale: 1.2;
+    transition: all 0.2s ease-in-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; 
+}
+
+.joinLobbyCard {
+  background-color: var(--color-primary);
+  padding: 0 5rem 3rem 5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 300px;
+  text-align: center;
+}
+
+.joinLobbyCard input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.joinButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.closeButton {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.joinButtons button {
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}

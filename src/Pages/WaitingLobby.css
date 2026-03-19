@@ -1,0 +1,199 @@
+.waiting-lobby {
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Size */
+  height: 90vh;
+
+  /* Padding */
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.players-list-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: column;
+
+  /* Size */
+  height: 100%;
+  width: 25vw;
+
+  /* Background */
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-accent);
+  border-radius: 10px;
+  box-shadow: 0 0px 20px var(--color-accent), 0 0px 20px var(--color-accent);
+
+  /* Padding + Margin */
+  margin-top: 5vh;
+}
+
+.invite-box {
+  /* Flexing */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Padding */
+  padding: 2vh;
+
+  /* Background */
+  background-color: var(--color-background);
+  border: 1px solid var(--color-accent);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  /* Text */
+  font-size: 0.7rem;
+  font-weight: bold;
+  font-family: "Press Start 2P", sans-serif;
+  color: var(--color-secondary);
+}
+
+.invite-box label {
+  color: var(--color-text);
+
+  width: 50%;
+}
+
+.invite-box input {
+  /* Background */
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-accent);
+  border-radius: 5px;
+
+  /* Size */
+  width: 50%;
+  height: 5vh;
+
+  /* Text */
+  color: var(--color-text);
+  font-size: 16px;
+
+  /* Padding + Margin */
+  padding-left: 0.5vw;
+}
+
+.start-match-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Size */
+  height: 90vh;
+  width: 32.5vw;
+
+  /* Background */
+  background-image: url("../assets/void-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  border: 3px solid var(--color-accent);
+  border-radius: 10px;
+  box-shadow: 0 0px 20px var(--color-accent), 0 0px 20px var(--color-accent);
+
+  /* Padding + Margin */
+  margin-top: 5vh;
+}
+
+.start-match-container h1 {
+  /* Text */
+  color: var(--color-start);
+
+  text-shadow:
+    1px 1px 0 rgb(255, 255, 255),
+    2px 2px 0 rgb(255, 255, 255),
+    3px 3px 0 rgb(255, 255, 255),
+    4px 4px 0 rgb(255, 198, 42);
+
+  font-weight: bold;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 55px;
+  text-align: center;
+
+  text-wrap: balance;
+  width: 50%;
+
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 30vh;
+
+  /* Make the text grow and shrink perdiodically */
+  animation: grow-shrink 2s ease-in-out infinite;
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.start-match-container .start-button {
+  /* Background */
+  background-color: var(--color-easy);
+  border: 2px solid var(--color-background);
+  border-radius: 5px;
+
+  /* Text */
+  color: var(--color-text);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Press Start 2P", sans-serif;
+
+  /* Size */
+  width: 50%;
+  height: 10vh;
+
+  align-self: center;
+
+}
+
+.start-match-container .cancel-button {
+  /* Background */
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-background);
+  border-radius: 5px;
+
+  /* Text */
+  color: var(--color-text);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Press Start 2P", sans-serif;
+
+  /* Size */
+  width: 50%;
+  height: 10vh;
+
+  align-self: center;
+}
+
+.match-info-container {
+  /* Flexing */
+  display: flex;
+  flex-direction: column;
+
+  /* Size */
+  height: 90vh;
+  width: 25vw;
+
+  /* Background */
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-accent);
+  border-radius: 10px;
+  box-shadow: 0 0px 20px var(--color-accent), 0 0px 20px var(--color-accent);
+
+   /* Padding + Margin */
+  margin-top: 5vh;
+}

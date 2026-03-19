@@ -1,0 +1,92 @@
+/* Main game container */
+.game-layout {
+  display: grid;
+  grid-template-columns: 15vw 1fr 300px;
+  gap: 2rem;
+  padding: 2rem;
+  padding-top: 6rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Left column - History */
+.game-layout-history {
+  position: sticky;
+  top: 6rem;
+  height: fit-content;
+  max-height: calc(100vh - 8rem);
+}
+
+/* Center column - Question and Answer */
+.game-layout-center {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1400px) {
+  .game-layout {
+    grid-template-columns: 200px 1fr 280px;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablets - Two column layout (center + score) */
+@media (max-width: 1200px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    padding-top: 5rem;
+  }
+
+  .game-layout-history,
+  .game-layout-score {
+    position: static;
+    max-height: none;
+  }
+
+  /* Reorder: Question/Answer, Score, then History */
+  .game-layout-history {
+    order: 3;
+  }
+
+  .game-layout-center {
+    order: 1;
+    gap: 1.5rem;
+  }
+
+  .game-layout-score {
+    order: 2;
+  }
+}
+
+/* Mobile - Single column, stacked */
+@media (max-width: 768px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    padding-top: 4rem;
+  }
+
+  .game-layout-center {
+    gap: 1rem;
+  }
+}
+
+/* Small mobile - Compact spacing */
+@media (max-width: 480px) {
+  .game-layout {
+    gap: 0.75rem;
+    padding: 0.75rem;
+    padding-top: 3.5rem;
+  }
+
+  .game-layout-center {
+    gap: 0.75rem;
+  }
+}

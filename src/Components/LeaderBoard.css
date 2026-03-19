@@ -1,0 +1,82 @@
+.leaderboard-card {
+    /* Flexing */
+    display: flex;
+    flex-direction: column;
+
+    /* Positioning */
+    margin-top: 6rem;
+
+    /* Background */
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+
+    padding: 1.5rem;
+    width: 15%;
+    height: 100%;
+
+    /* Border glow */
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 0 0px 15px var(--color-secondary), 0 0px 15px var(--color-secondary);
+    overflow-y: auto;
+}
+
+#leaderboard-title {
+    /* Text */
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-family: "Press Start 2P", sans-serif;
+
+    /* Size */
+    width: 100%;
+
+    /* Positioning */
+    margin-top: 0rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    /* Background */
+    background-color: var(--color-background);
+    border-bottom: 3px solid var(--color-secondary);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.leaderboard-headers {
+    /* Flexing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Text */
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    font-family: "Press Start 2P", sans-serif;
+}
+
+.leaderboard-list li {
+    /* Flexing */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 110%;
+
+
+    /*Padding + Margin */
+    padding: 0.5rem 0.5rem;
+    margin-left: -2.5vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+   /* Background */
+   background-color: var(--color-background);
+   border: 1px solid var(--color-secondary);
+   border-radius: 10px;
+
+   /* Text */
+   font-size: 0.8rem;
+   font-family: "Press Start 2P", sans-serif;
+}

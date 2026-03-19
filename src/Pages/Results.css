@@ -1,0 +1,227 @@
+.results-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+.results-background-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/resultsBackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
+.return-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  color: rgb(226, 104, 22);
+  padding: 0.75rem 1.5rem;
+  font-family: "Press Start 2P", sans-serif;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.return-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.results-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.winner-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: pulse 2s infinite;
+}
+
+.winner-text {
+  font-size: 5rem;
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: bold;
+  color: rgba(255, 215, 0, 0.6);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  text-shadow:
+    0 0 20px rgb(226, 104, 22),
+    0 0 40px rgb(226, 104, 22),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.chicken-dinner-text {
+  font-size: 3rem;
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.8),
+    0 10px 30px rgb(226, 104, 22);
+}
+
+.podium-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.podium-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  padding-top: 100px;
+}
+
+.podium-item:hover {
+  transform: scale(1.05);
+}
+
+.player-info-container {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-place-info {
+  top: -100px;
+}
+
+.player-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Press Start 2P", sans-serif;
+  color: white;
+  margin: 0;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.first-name {
+  font-size: 1.875rem;
+}
+
+.player-score {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  font-family: "Press Start 2P", sans-serif;
+  margin-bottom: 0;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.first-score {
+  color: #fbbf24;
+  font-size: 3rem;
+}
+
+.second-score {
+  color: #d1d5db;
+}
+
+.third-score {
+  color: #fb923c;
+}
+
+.podium-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.podium-image {
+  width: 10rem;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.first-place-image {
+  width: 12rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .winner-text {
+    font-size: 3rem;
+  }
+
+  .chicken-dinner-text {
+    font-size: 2rem;
+  }
+
+  .podium-container {
+    gap: 1rem;
+  }
+
+  .podium-image {
+    width: 6rem;
+  }
+
+  .first-place-image {
+    width: 8rem;
+  }
+
+  .player-info-container {
+    top: -60px;
+  }
+
+  .first-place-info {
+    top: -80px;
+  }
+
+  .player-name {
+    font-size: 1.125rem;
+  }
+
+  .player-score {
+    font-size: 1.5rem;
+  }
+
+  .first-score {
+    font-size: 2rem;
+  }
+}
